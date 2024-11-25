@@ -1,8 +1,7 @@
-package com.sandeep.snoozelloo.alarm.presentation.components
+package com.sandeep.snoozelloo.ui.theme.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
@@ -21,73 +21,72 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.sandeep.snoozelloo.alarm.presentation.models.AlarmUI
-import com.sandeep.snoozelloo.alarm.presentation.models.DisplayableTime
+import com.sandeep.snoozelloo.AlarmUI
 import com.sandeep.snoozelloo.ui.theme.SnoozellooTheme
+import com.sandeep.snoozelloo.ui.theme.onCardColor
+import com.sandeep.snoozelloo.ui.theme.timeLeftColor as timeLeftColor1
 
 @Composable
 fun AlarmListItem(
     alarmUI: AlarmUI,
     modifier: Modifier = Modifier,
     onAlarmClick: () -> Unit = {},
-    onToggleSwitch: (Boolean) -> Unit = {}
+    onSwitchClick: (Boolean) -> Unit = {},
 ) {
-    val contentColor = if (isSystemInDarkTheme()) {
-        Color.White
-    } else {
-        Color.Black
-    }
-
     Card(
         modifier = modifier
-            .clickable(onClick = onAlarmClick)
-            .padding(
-                start = 16.dp,
-                end = 16.dp,
-                top = 16.dp
-            )
+            .padding(horizontal = 16.dp)
+            .padding(top = 16.dp)
+            .clickable(onClick = onAlarmClick),
+        colors = CardDefaults.cardColors().copy(
+            containerColor = Color.White
+        )
     ) {
         Row(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.Top
         ) {
             Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
+                modifier = Modifier.alignByBaseline()
+                    .weight(1f)
+                ,verticalArrangement = Arrangement.spacedBy(4.dp)
             ) {
                 Text(
                     text = alarmUI.label,
-                    color = contentColor,
+                    color = onCardColor,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 14.sp
+                    fontSize = 14.sp,
                 )
                 Row(
                     verticalAlignment = Alignment.Bottom
                 ) {
                     Text(
-                        text = "10:00",
-                        color = contentColor,
+                        text = alarmUI.time,
+                        color = onCardColor,
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 38.sp,
                         modifier = Modifier.alignByBaseline(),
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
-                        text = "AM",
-                        color = contentColor,
+                        text = alarmUI.amOrPm,
+                        color = onCardColor,
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 22.sp,
                         modifier = Modifier.alignByBaseline(),
                     )
                 }
                 Text(
-                    text = "Alarm in 30min",
-                    color = contentColor,
+                    text = alarmUI.messageTimeLeft,
+                    color = timeLeftColor1,
                     fontWeight = FontWeight.Medium,
                     fontSize = 12.sp,
                 )
             }
-            Switch(checked = alarmUI.isEnabled,
-                onCheckedChange = onToggleSwitch
+
+            Switch(
+                checked = alarmUI.isEnabled,
+                onCheckedChange = onSwitchClick,
             )
         }
     }
@@ -106,8 +105,11 @@ fun PreviewAlarmListItem() {
     }
 }
 
-val alarmUI = AlarmUI(
+var alarmUI = AlarmUI(
     label = "Wake Up",
     isEnabled = true,
-    time = DisplayableTime(10, 20)
+    time = "10:20",
+    amOrPm = "AM",
+    messageTimeLeft = "Alarm in 30min"
+
 )

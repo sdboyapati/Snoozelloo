@@ -1,7 +1,10 @@
 package com.sandeep.snoozelloo.ui.theme
 import androidx.compose.ui.graphics.Color
 
-val primaryLight = Color(0xFF515B92)
+val timeLeftColor: Color = Color(0xFF858585)
+val onCardColor: Color = Color(0xFF0D0F19)
+
+val primaryLight = Color(0xFF4664FF)
 val onPrimaryLight = Color(0xFFFFFFFF)
 val primaryContainerLight = Color(0xFFDEE0FF)
 val onPrimaryContainerLight = Color(0xFF0A154B)
@@ -17,7 +20,7 @@ val errorLight = Color(0xFFBA1A1A)
 val onErrorLight = Color(0xFFFFFFFF)
 val errorContainerLight = Color(0xFFFFDAD6)
 val onErrorContainerLight = Color(0xFF410002)
-val backgroundLight = Color(0xFFFBF8FF)
+val backgroundLight = Color(0xFFF6F6F6)
 val onBackgroundLight = Color(0xFF1B1B21)
 val surfaceLight = Color(0xFFFBF8FF)
 val onSurfaceLight = Color(0xFF1B1B21)
@@ -109,8 +112,8 @@ val surfaceContainerLightHighContrast = Color(0xFFEFEDF4)
 val surfaceContainerHighLightHighContrast = Color(0xFFE9E7EF)
 val surfaceContainerHighestLightHighContrast = Color(0xFFE4E1E9)
 
-val primaryDark = Color(0xFFBAC3FF)
-val onPrimaryDark = Color(0xFF222C61)
+val primaryDark = Color(0xFF4664FF)
+val onPrimaryDark = Color(0xFFB4BAD3)
 val primaryContainerDark = Color(0xFF394379)
 val onPrimaryContainerDark = Color(0xFFDEE0FF)
 val secondaryDark = Color(0xFFC3C5DD)

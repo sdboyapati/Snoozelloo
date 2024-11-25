@@ -1,4 +1,4 @@
-package com.sandeep.snoozelloo.alarm.domain
+package com.sandeep.snoozelloo
 
 import java.time.LocalTime
 

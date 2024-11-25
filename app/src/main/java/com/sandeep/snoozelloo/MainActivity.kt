@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.sandeep.snoozelloo.ui.theme.SnoozellooTheme
+import com.sandeep.snoozelloo.ui.theme.components.AlarmListItem
+import com.sandeep.snoozelloo.ui.theme.components.alarmUI
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +23,13 @@ class MainActivity : ComponentActivity() {
             SnoozellooTheme {
                 Scaffold(modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    AlarmListItem(
+                        modifier = Modifier.padding(innerPadding),
+                        alarmUI = alarmUI,
+                        onAlarmClick = {},
+                        onSwitchClick = {
+                            alarmUI = alarmUI.copy(isEnabled = it)
+                        }
                     )
                 }
             }
