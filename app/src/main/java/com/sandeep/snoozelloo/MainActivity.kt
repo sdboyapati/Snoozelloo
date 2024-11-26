@@ -23,32 +23,9 @@ class MainActivity : ComponentActivity() {
             SnoozellooTheme {
                 Scaffold(modifier = Modifier.fillMaxSize(),
                 ) { innerPadding ->
-                    AlarmListItem(
-                        modifier = Modifier.padding(innerPadding),
-                        alarmUI = alarmUI,
-                        onAlarmClick = {},
-                        onSwitchClick = {
-                            alarmUI = alarmUI.copy(isEnabled = it)
-                        }
-                    )
+                    AlarmListScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SnoozellooTheme {
-        Greeting("Android")
     }
 }
