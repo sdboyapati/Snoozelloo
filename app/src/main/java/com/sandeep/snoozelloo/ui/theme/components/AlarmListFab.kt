@@ -7,6 +7,7 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import com.sandeep.snoozelloo.ui.theme.primaryLight
 
 @Composable
@@ -22,4 +23,10 @@ fun AlarmListFab(onAddAlarmClick: () -> Unit) {
             tint = Color.White,
         )
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewAlarmListFab() {
+    AlarmListFab(onAddAlarmClick = {})
 }
