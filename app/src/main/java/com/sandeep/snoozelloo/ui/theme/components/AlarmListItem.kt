@@ -55,24 +55,22 @@ fun AlarmListItem(
                     text = alarmUI.label,
                     color = onCardColor,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 14.sp,
+                    fontSize = 16.sp,
                 )
-                Row(
-                    verticalAlignment = Alignment.Bottom
-                ) {
+                Row(modifier = Modifier.padding(top = 4.dp)) {
                     Text(
                         text = alarmUI.time,
                         color = onCardColor,
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = 38.sp,
+                        fontWeight = FontWeight.Medium,
+                        fontSize = 40.sp,
                         modifier = Modifier.alignByBaseline(),
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
                         text = alarmUI.amOrPm,
                         color = onCardColor,
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = 22.sp,
+                        fontWeight = FontWeight.Medium,
+                        fontSize = 24.sp,
                         modifier = Modifier.alignByBaseline(),
                     )
                 }
@@ -80,7 +78,7 @@ fun AlarmListItem(
                     text = alarmUI.messageTimeLeft,
                     color = timeLeftColor1,
                     fontWeight = FontWeight.Medium,
-                    fontSize = 12.sp,
+                    fontSize = 14.sp,
                 )
             }
 
