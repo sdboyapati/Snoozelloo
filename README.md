@@ -3,4 +3,4 @@
 
 1. Used Jetpack Compose for UI
 
-<img src="app/src/main/screenshots/AlarmsListScreen.jpg" width="300" height="600">
+<img src="app/src/main/screenshots/AlarmsListScreen.jpg" width="300">
