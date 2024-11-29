@@ -3,4 +3,4 @@
 
 1. Used Jetpack Compose for UI
 
-![Alarm List Screen](app/src/main/screenshots/AlarmListScreen.jpg)
+![Alarm List Screen](Snoozelloo/app/src/main/screenshots/AlarmListScreen.jpg)
