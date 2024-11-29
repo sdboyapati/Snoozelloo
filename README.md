@@ -3,4 +3,4 @@
 
 1. Used Jetpack Compose for UI
 
-![Alarm List Screen](app/src/main/screenshots/AlarmListScreen.jpg)
+![AlarmsListScreen.jpg](app%2Fsrc%2Fmain%2Fscreenshots%2FAlarmsListScreen.jpg)
